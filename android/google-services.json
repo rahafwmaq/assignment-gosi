@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "188951979015",
+    "project_id": "gosi-assignment",
+    "storage_bucket": "gosi-assignment.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:188951979015:android:1673031ebeb1f1b0a076a2",
+        "android_client_info": {
+          "package_name": "com.example.assignment_gosi"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDL1SXQHctul_Q88NA6uXde53L6jSBOMzU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
