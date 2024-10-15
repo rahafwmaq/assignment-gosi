@@ -2,8 +2,8 @@ import 'package:assignment_gosi/constant/colors.dart';
 import 'package:assignment_gosi/utils/screen_extension.dart.dart';
 import 'package:assignment_gosi/views/overview_result/bloc/overview_bloc.dart';
 import 'package:assignment_gosi/views/overview_result/widgets/containerData.dart';
-import 'package:assignment_gosi/widget/text_widget.dart';
-import 'package:assignment_gosi/widgetss/liner_indicator_widget.dart';
+import 'package:assignment_gosi/widgets/text_widget.dart';
+import 'package:assignment_gosi/widgets/liner_indicator_widget.dart';
 import 'package:flutter/material.dart';
 
 class OverviewContentTab extends StatelessWidget {

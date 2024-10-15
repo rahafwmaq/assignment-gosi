@@ -7,7 +7,7 @@ import 'package:assignment_gosi/views/overview_result/widgets/bg_layout.dart';
 import 'package:assignment_gosi/views/overview_result/widgets/overview_content_tab.dart';
 import 'package:assignment_gosi/views/overview_result/widgets/symptoms_content_tap.dart';
 import 'package:assignment_gosi/views/overview_result/widgets/training_content_tap.dart';
-import 'package:assignment_gosi/widget/text_widget.dart';
+import 'package:assignment_gosi/widgets/text_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -62,7 +62,7 @@ class _OverviewResultViewState extends State<OverviewResultView> {
                             height: context.getHeight(divide: 1.15),
                             child: Column(
                               children: [
-                                // ======  TabBat Title  ======
+                                // ======  TabBar Title  ======
                                 Padding(
                                   padding: const EdgeInsets.only(bottom: 20),
                                   child: SizedBox(

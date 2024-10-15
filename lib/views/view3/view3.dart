@@ -1,5 +1,5 @@
 import 'package:assignment_gosi/constant/colors.dart';
-import 'package:assignment_gosi/widget/text_widget.dart';
+import 'package:assignment_gosi/widgets/text_widget.dart';
 import 'package:flutter/material.dart';
 
 class View3 extends StatelessWidget {

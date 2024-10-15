@@ -1,9 +1,9 @@
 import 'package:assignment_gosi/constant/colors.dart';
 import 'package:assignment_gosi/utils/screen_extension.dart.dart';
 import 'package:assignment_gosi/views/overview_result/bloc/overview_bloc.dart';
-import 'package:assignment_gosi/widget/text_widget.dart';
-import 'package:assignment_gosi/widgetss/container_white_widget.dart';
-import 'package:assignment_gosi/widgetss/show_dialog.dart';
+import 'package:assignment_gosi/widgets/text_widget.dart';
+import 'package:assignment_gosi/widgets/container_white_widget.dart';
+import 'package:assignment_gosi/widgets/show_dialog.dart';
 import 'package:flutter/material.dart';
 
 class ContainerData extends StatelessWidget {
