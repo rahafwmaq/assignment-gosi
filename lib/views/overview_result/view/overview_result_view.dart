@@ -11,9 +11,21 @@ import 'package:assignment_gosi/widget/text_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+class OverviewResultView extends StatefulWidget {
+  const OverviewResultView({
+    super.key,
+  });
 
-class OverviewResultView extends StatelessWidget {
-  const OverviewResultView({super.key});
+  @override
+  State<OverviewResultView> createState() => _OverviewResultViewState();
+}
+
+class _OverviewResultViewState extends State<OverviewResultView> {
+  // PageController for PageView
+  PageController pageController = PageController();
+
+  // Selected index for ListView
+  int selectedIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -66,12 +78,10 @@ class OverviewResultView extends StatelessWidget {
                                           itemBuilder: (context, index) {
                                             return GestureDetector(
                                               onTap: () {
-                                               
-                                                  overviewBloc.selectedIndex =
-                                                      index;
-                                             
-                                                overviewBloc.pageController
-                                                    .animateToPage(
+                                                setState(() {
+                                                  selectedIndex = index;
+                                                });
+                                                pageController.animateToPage(
                                                   index,
                                                   duration: const Duration(
                                                       milliseconds: 500),
@@ -97,11 +107,10 @@ class OverviewResultView extends StatelessWidget {
                                                     margin: const EdgeInsets
                                                         .symmetric(
                                                         horizontal: 2),
-                                                    height: index ==
-                                                            overviewBloc
-                                                                .selectedIndex
-                                                        ? 5
-                                                        : 3,
+                                                    height:
+                                                        index == selectedIndex
+                                                            ? 5
+                                                            : 3,
                                                     width: context.getWidth(
                                                         divide: 3.5),
                                                     transform:
@@ -110,11 +119,10 @@ class OverviewResultView extends StatelessWidget {
                                                       border: Border.all(
                                                         color: noColor,
                                                       ),
-                                                      color: index ==
-                                                              overviewBloc
-                                                                  .selectedIndex
-                                                          ? white
-                                                          : grayTransparent,
+                                                      color:
+                                                          index == selectedIndex
+                                                              ? white
+                                                              : grayTransparent,
                                                     ),
                                                   ),
                                                 ],
@@ -128,9 +136,11 @@ class OverviewResultView extends StatelessWidget {
                                 // ======  TabBat Content  ======
                                 Expanded(
                                   child: PageView.builder(
-                                      controller: overviewBloc.pageController,
+                                      controller: pageController,
                                       onPageChanged: (index) {
-                                        overviewBloc.selectedIndex = index;
+                                        setState(() {
+                                          selectedIndex = index;
+                                        });
                                       },
                                       itemCount: overviewBloc
                                           .locatorOverview.homeViewData.length,
@@ -139,9 +149,17 @@ class OverviewResultView extends StatelessWidget {
                                             ? BlocBuilder<OverviewBloc,
                                                 OverviewState>(
                                                 builder: (context, state) {
-                                                  return OverviewContentTab(
-                                                    overviewBloc: overviewBloc,
-                                                  );
+                                                  if (state
+                                                      is SuccessGetDataState) {
+                                                    return OverviewContentTab(
+                                                      overviewBloc:
+                                                          overviewBloc,
+                                                    );
+                                                  } else if (state
+                                                      is ErrorGetDataState) {
+                                                    Container();
+                                                  }
+                                                  return Container();
                                                 },
                                               )
                                             : index == 1

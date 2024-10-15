@@ -18,7 +18,7 @@ class OverviewContentTab extends StatelessWidget {
     return Column(
       children: [
         TextWidget(
-          text: overviewBloc.locatorOverview.fitnessModel.title ?? 'v',
+          text: overviewBloc.locatorOverview.fitnessModel.title ?? '',
           colorText: white,
           capitalizeFirstLetterInWord: true,
           fontSize: context.getWidth(divide: 14.54),
