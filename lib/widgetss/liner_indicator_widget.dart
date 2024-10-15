@@ -25,7 +25,7 @@ class _LinerIndicatorWidgetState extends State<LinerIndicatorWidget> {
           colorText: white,
         ),
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 6),
+          padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 20),
           child: SliderTheme(
             data: SliderTheme.of(context).copyWith(
                 trackHeight: 1,
@@ -100,22 +100,28 @@ class _LinerIndicatorWidgetState extends State<LinerIndicatorWidget> {
                 ),
                 Align(
                   alignment: Alignment.center,
-                  child: Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 20),
-                    width: context.getWidth(divide: 1.3),
-                    child: Slider(
-                      value: _sliderValue,
-                      label: '${_sliderValue.toInt()}',
-                      min: 0,
-                      max: 28,
-                      divisions: 100,
-                      onChanged: (value) {
-                        setState(() {
-                          print(value);
-                          _sliderValue = value;
-                        });
-                      },
-                    ),
+                  child: Column(
+                    children: [
+                      Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 20),
+                        width: context.getWidth(divide: 1.3),
+                        child: Slider(
+                          value: _sliderValue,
+                          label: '${_sliderValue.toInt()}',
+                          activeColor: noColor,
+                          thumbColor: white,
+                          min: 0,
+                          max: 28,
+                          divisions: 100,
+                          onChanged: (value) {
+                            setState(() {
+                              print(value);
+                              _sliderValue = value;
+                            });
+                          },
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ],

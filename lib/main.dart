@@ -1,20 +1,23 @@
-import 'package:assignment_gosi/views/navbar/nav_bar.dart';
+import 'package:assignment_gosi/services/get_it_config.dart';
+import 'package:assignment_gosi/views/loading_view.dart';
+import 'package:assignment_gosi/views/overview_result/bloc/overview_bloc.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await setupGetIt();
   if (kIsWeb) {
     await Firebase.initializeApp(
         options: const FirebaseOptions(
-            apiKey: "AIzaSyAGgQNan7VahJiuA3h4nTLtbBRhGGhmNyA",
-            authDomain: "gosi-assignment.firebaseapp.com",
-            projectId: "gosi-assignment",
-            storageBucket: "gosi-assignment.appspot.com",
-            messagingSenderId: "188951979015",
-            appId: "1:188951979015:web:eee752dbac2922c0a076a2",
-            measurementId: "G-R487R0R3TG"));
+            apiKey: "AIzaSyBPSb45LSUYePTO8RNmOznsRs4vpOoX3AU",
+            authDomain: "gosi-63899.firebaseapp.com",
+            projectId: "gosi-63899",
+            storageBucket: "gosi-63899.appspot.com",
+            messagingSenderId: "748305348351",
+            appId: "1:748305348351:web:5c594105280d87b8b73eca"));
   } else {
     await Firebase.initializeApp();
   }
@@ -27,10 +30,13 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(fontFamily: 'EuclidSquare'),
-      debugShowCheckedModeBanner: false,
-      home: const NavBar(),
+    return BlocProvider(
+      create: (context) => OverviewBloc()..add(GetDataEvent()),
+      child: MaterialApp(
+        theme: ThemeData(fontFamily: 'EuclidSquare'),
+        debugShowCheckedModeBanner: false,
+        home: const LoadingView(),
+      ),
     );
   }
 }
