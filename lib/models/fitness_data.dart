@@ -33,16 +33,16 @@ class FitnessModel {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['readiness_score'] = this.readinessScore;
-    data['training_intensity'] = this.trainingIntensity;
-    data['sleep_hours'] = this.sleepHours;
-    data['sleep_quality'] = this.sleepQuality;
-    data['readiness_score_title'] = this.readinessScoreTitle;
-    data['title'] = this.title;
-    data['rhr'] = this.rhr;
-    data['readiness_score_desc'] = this.readinessScoreDesc;
-    data['desc'] = this.desc;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['readiness_score'] = readinessScore;
+    data['training_intensity'] = trainingIntensity;
+    data['sleep_hours'] = sleepHours;
+    data['sleep_quality'] = sleepQuality;
+    data['readiness_score_title'] = readinessScoreTitle;
+    data['title'] = title;
+    data['rhr'] = rhr;
+    data['readiness_score_desc'] = readinessScoreDesc;
+    data['desc'] = desc;
     return data;
   }
 }

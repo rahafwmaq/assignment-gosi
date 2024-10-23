@@ -60,33 +60,30 @@ class OverviewContentTab extends StatelessWidget {
           ),
         ),
         const LinerIndicatorWidget(),
-        Padding(
-          padding: const EdgeInsets.symmetric(vertical: 15),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              RichText(
-                text: const TextSpan(
-                  children: <TextSpan>[
-                    TextSpan(text: 'Current phase: '),
-                    TextSpan(
-                        text: 'Mid Follicular',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                        )),
-                  ],
-                ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            RichText(
+              text: const TextSpan(
+                children: <TextSpan>[
+                  TextSpan(text: 'Current phase: '),
+                  TextSpan(
+                      text: 'Mid Follicular',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      )),
+                ],
               ),
-              Padding(
-                padding: const EdgeInsets.only(left: 5),
-                child: Icon(
-                  Icons.arrow_forward_ios_rounded,
-                  color: white,
-                  size: context.getWidth(divide: 30),
-                ),
-              )
-            ],
-          ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 5),
+              child: Icon(
+                Icons.arrow_forward_ios_rounded,
+                color: white,
+                size: context.getWidth(divide: 30),
+              ),
+            )
+          ],
         ),
       ],
     );

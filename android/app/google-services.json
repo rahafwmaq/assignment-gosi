@@ -7,6 +7,25 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:748305348351:android:7096dea49dcf72aab73eca",
+        "android_client_info": {
+          "package_name": "com.example.assignm"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBhOqrkK3Aky6VsjE0HKWKgFlUlzRZeVnA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:748305348351:android:6d84cb4403d3c7adb73eca",
         "android_client_info": {
           "package_name": "com.example.assignment_gosi"

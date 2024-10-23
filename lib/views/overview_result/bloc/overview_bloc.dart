@@ -4,15 +4,14 @@ import 'package:assignment_gosi/services/overview_service.dart';
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
-import 'package:meta/meta.dart';
 
 part 'overview_event.dart';
 part 'overview_state.dart';
 
 class OverviewBloc extends Bloc<OverviewEvent, OverviewState> {
   final locatorOverview = GetIt.I.get<OverviewService>();
-  int selectedIndex = 0 ;
-    PageController pageController = PageController();
+  int selectedIndex = 0;
+  PageController pageController = PageController();
 
   OverviewBloc() : super(OverviewInitial()) {
     on<GetDataEvent>(onGetDataEvent);
